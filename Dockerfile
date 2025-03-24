@@ -33,7 +33,7 @@ RUN --mount=from=src,target=/tmp/fail2ban,rw \
   && cd /tmp/fail2ban \
   && 2to3 -w --no-diffs bin/* fail2ban \
   && python3 setup.py install --without-tests \
-  && apk del build-dependencies \
+  && apk del build-dependencies 
 #  && rm -rf /etc/fail2ban/jail.d /root/.cache
 
 COPY entrypoint.sh /entrypoint.sh
